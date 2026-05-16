@@ -368,7 +368,7 @@ defmodule X509.Certificate do
   @doc false
   # Returns a random serial number as an integer
   def random_serial(size) do
-    <<i::unsigned-size(size)-unit(8)>> = :crypto.strong_rand_bytes(size)
+    <<i::unsigned-size(^size)-unit(8)>> = :crypto.strong_rand_bytes(size)
     i
   end
 
